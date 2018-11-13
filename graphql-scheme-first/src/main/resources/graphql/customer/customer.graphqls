@@ -1,0 +1,28 @@
+type Customer{
+    customerId: Int!
+    name: String!
+    email: String!
+    addresses: [Address]
+}
+
+input CreateCustomerInput {
+    name: String!
+    email: String!
+}
+
+input UpdateCustomerInput {
+    customerId: Int!
+    name: String!
+    email: String!
+}
+
+extend type Query {
+    customers: [Customer]
+    customer(customerId: Int!): Customer
+}
+
+extend type Mutation {
+    createCustomer(input: CreateCustomerInput!): Customer!
+    updateCustomer(input: UpdateCustomerInput!): Customer!
+    deleteCustomer(customerId: Int!): Boolean
+}

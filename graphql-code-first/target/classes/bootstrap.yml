@@ -1,0 +1,22 @@
+server:
+  port: ${PORT:8080}
+spring:
+  application:
+    name: customer-service
+#---
+#spring:
+#  profiles: local
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: false
+#
+#---
+#spring:
+#  profiles: dev
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: CONFIG-SERVER
+#---

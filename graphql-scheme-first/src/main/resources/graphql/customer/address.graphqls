@@ -1,0 +1,24 @@
+type Address{
+    id: Long!
+    postNumber: String!
+    address: String!
+    detailAddress: String!
+    customer: Customer!
+}
+
+input CreateAddressInput {
+    customerId: Int!
+    postNumber: String!
+    address: String!
+    detailAddress: String!
+}
+
+extend type Query {
+    addresses: [Address]
+    address(id: Int!): Address
+}
+
+extend type Mutation{
+    createAddress(input: CreateAddressInput): Address
+    deleteAddresses(id: Int!): Boolean
+}
